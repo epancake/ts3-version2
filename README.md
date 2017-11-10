@@ -1,3 +1,7 @@
+## Deployed url
+https://cryptic-everglades-77735.herokuapp.com/
+
+
 ## Instructions
 
 Using the included `.csv` dataset:
