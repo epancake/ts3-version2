@@ -3,71 +3,71 @@ const cors = require("cors");
 const app = express()
 app.use(cors());
 
-var instructors = [{
+var data = [{
   "id": 1,
-  "Full Name": "Kyle Coberly",
+  "FullName": "Kyle Coberly",
   "Title": "Faculty Director",
-  "Number of Dogs": 0
+  "NumberOfDogs": 0
   },
   {
     "id": 2,
-    "Full Name": "Danny Fritz",
+    "FullName": "Danny Fritz",
     "Title": "Lead Instructor",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
   {
     "id": 3,
-    "Full Name": "CJ Reynolds",
+    "FullName": "CJ Reynolds",
     "Title": "Lead Instructor",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
   {
     "id": 4,
-    "Full Name": "Brooks Patton",
+    "FullName": "Brooks Patton",
     "Title": "Lead Instructor",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
   {
     "id": 5,
-    "Full Name": "Roberto Ortega",
+    "FullName": "Roberto Ortega",
     "Title": "Lead Instructor",
-    "Number of Dogs": 1
+    "NumberOfDogs": 1
   },
   {
     "id": 6,
-    "Full Name": "Chad Drummond",
+    "FullName": "Chad Drummond",
     "Title": "Instructor",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
   {
     "id": 7,
-    "Full Name": "Kim Schlesinger",
+    "FullName": "Kim Schlesinger",
     "Title": "Instructor",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
   {
     "id": 8,
-    "Full Name": "Peter Ostiguy",
+    "FullName": "Peter Ostiguy",
     "Title": "Associate Instructor",
-    "Number of Dogs": 1
+    "NumberOfDogs": 1
   },
   {
     "id": 9,
-    "Full Name": "Cass Torske",
+    "FullName": "Cass Torske",
     "Title": "Resident",
-    "Number of Dogs": 1
+    "NumberOfDogs": 1
   },
   {
     "id": 10,
-    "Full Name": "Matt Winzer",
+    "FullName": "Matt Winzer",
     "Title": "Resident",
-    "Number of Dogs": 2
+    "NumberOfDogs": 2
   },
   {
     "id": 11,
     "Full Name": "Aaron Goodman",
     "Title": "Resident",
-    "Number of Dogs": 0
+    "NumberOfDogs": 0
   },
 ]
 
@@ -81,21 +81,21 @@ function findById(data, id){
 }
 
 app.get("/", function (request, response) {
-  response.json(instructors);
+  response.json(data);
 }
 );
 
 app.get("/:id", function (request, response) {
-  var record = findById(instructors, request.params.id)
+  var record = findById(data, request.params.id)
   if (!record){
-    response.status = 404;
+    response.status(404);
     response.json({
       error: {
         message: "No record found!"
       }
     });
   }
-  response.json({instructors: record});
+  response.json({data: record});
 }
 );
 
