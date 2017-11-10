@@ -73,7 +73,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", function (request, response) {
-  response.json(data: instructors);
+  response.json({data: instructors});
 }
 );
 
